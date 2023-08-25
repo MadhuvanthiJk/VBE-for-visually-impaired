@@ -14,13 +14,11 @@ text=True
 # pyglet.have_avbin=True
 
 
-# project: :. Project: Voice based Email for blind :.
-# Author: Sayak Naskar
 
 
 # fetch project name
 tts = gTTS(text="Project: Voice based Email for blind", lang='en')
-ttsname = ("name.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+ttsname = ("name.mp3")  
 tts.save(ttsname)
 
 music = pyglet.media.load(ttsname, streaming=False)
@@ -36,7 +34,7 @@ print("You are logging from : " + login())
 # choices
 print("1. composed a mail.")
 tts = gTTS(text="option 1. composed a mail.", lang='en')
-ttsname = ("hello.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+ttsname = ("hello.mp3")  
 tts.save(ttsname)
 
 music = pyglet.media.load(ttsname, streaming=False)
@@ -58,7 +56,7 @@ os.remove(ttsname)
 
 # this is for input choices
 tts = gTTS(text="Your choice ", lang='en')
-ttsname = ("hello.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+ttsname = ("hello.mp3")  
 tts.save(ttsname)
 
 music = pyglet.media.load(ttsname, streaming=False)
@@ -101,14 +99,14 @@ if text == '1' or text == 'One' or text == 'one':
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
     mail = smtplib.SMTP('smtp.gmail.com', 587)  # host and port area
-    mail.ehlo()  # Hostname to send for this command defaults to the FQDN of the local host.
+    mail.ehlo()  
     mail.starttls()  # security connection
     mail.login('pippafitzzamobi@gmail.com', 'ctvweajbyeccqink')  # login part
     mail.sendmail('pippafitzzamobi@gmail.com', 'goodgirlbadblood06@gmail.com', msg)  # send part
     print("Congrats! Your mail has send. ")
     tts = gTTS(text="Congrats! Your mail has send. ", lang='en')
     ttsname = (
-        "send.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+        "send.mp3")  
     tts.save(ttsname)
     music = pyglet.media.load(ttsname, streaming=False)
     music.play()
@@ -117,7 +115,7 @@ if text == '1' or text == 'One' or text == 'one':
     mail.close()
 
 if text == '2' or text == 'tu' or text == 'two' or text == 'Tu' or text == 'to' or text == 'To':
-    mail = imaplib.IMAP4_SSL('imap.gmail.com', 993)  # this is host and port area.... ssl security
+    mail = imaplib.IMAP4_SSL('imap.gmail.com', 993)  
     unm = ('pippafitzzamobi@gmail.com')  # username
     psw = ('ctvweajbyeccqink')  # password
     mail.login(unm,psw)  # login
@@ -125,7 +123,7 @@ if text == '2' or text == 'tu' or text == 'two' or text == 'Tu' or text == 'to' 
     print("Number of mails in your inbox :" + str(total))
     tts = gTTS(text="Total mails are :" + str(total), lang='en')  # voice out
     ttsname = (
-        "total.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+        "total.mp3")  
     tts.save(ttsname)
     music = pyglet.media.load(ttsname, streaming=False)
     music.play()
@@ -133,11 +131,11 @@ if text == '2' or text == 'tu' or text == 'two' or text == 'Tu' or text == 'to' 
     os.remove(ttsname)
 
     # unseen mails
-    unseen = mail.search(None, 'UnSeen')  # unseen count
+    unseen = mail.search(None, 'UnSeen')  
     print("Number of UnSeen mails :" + str(unseen))
     tts = gTTS(text="Your Unseen mail :" + str(unseen), lang='en')
     ttsname = (
-        "unseen.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+        "unseen.mp3")  
     tts.save(ttsname)
     music = pyglet.media.load(ttsname, streaming=False)
     music.play()
@@ -156,7 +154,7 @@ if text == '2' or text == 'tu' or text == 'two' or text == 'Tu' or text == 'to' 
     print("Subject: " + str(email_message['Subject']))
     tts = gTTS(text="From: " + email_message['From'] + " And Your subject: " + str(email_message['Subject']), lang='en')
     ttsname = (
-        "mail.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+        "mail.mp3")  
     tts.save(ttsname)
     music = pyglet.media.load(ttsname, streaming=False)
     music.play()
@@ -172,7 +170,7 @@ if text == '2' or text == 'tu' or text == 'two' or text == 'Tu' or text == 'to' 
     print("Body :" + txt)
     tts = gTTS(text="Body: " + txt, lang='en')
     ttsname = (
-        "body.mp3")  # Example: path -> C:\Users\sayak\Desktop> just change with your desktop directory. Don't use my directory.
+        "body.mp3")  
     tts.save(ttsname)
     music = pyglet.media.load(ttsname, streaming=False)
     music.play()
